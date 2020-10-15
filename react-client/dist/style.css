@@ -17,7 +17,7 @@ html,body {
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  background-color: #ffffff21;
+  background-color: #ffffff10;
 
 }
 
@@ -32,9 +32,24 @@ html,body {
       text-align: center;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+input[type=submit]{
+  width: 100px;
+  height: 50px;
+  background: #f3f0f1;
+  position: relative;
+  background: #f3f0f1;
+  margin-bottom: 25px;
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
 
 .title{
   font-size: 50px;
+  color: white;
+  shadow: 0 1px
 }

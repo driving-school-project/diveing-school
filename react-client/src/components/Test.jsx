@@ -20,16 +20,16 @@ class Test extends React.Component {
         return (
             <div className='bd'>
                 <center>
-            <h4>Q N°1</h4>
+            <h4 className='title'>Q N°1</h4>
             <img src="img/img1.jpg" alt="image"/><br></br><br></br><br></br>
             <span>Q:....</span><br></br><br></br><br></br>
             <input type="checkbox"/>answer1<br></br><br></br><br></br>
             <input type="checkbox"/>answer2<br></br><br></br><br></br>
             <input type="checkbox"/>answer2<br></br><br></br><br></br>
-            <button value="true" onClick={this.changeToNext} >NEXT</button>
+            <button className="btn" value="true" onClick={this.changeToNext} >NEXT</button>
             </center>
             </div>
-          );
+          )
         }else if(this.state.next === "true"){
             return <Result/>
         }
