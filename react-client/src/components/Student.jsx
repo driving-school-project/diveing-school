@@ -19,12 +19,10 @@ class Student extends React.Component {
     return (
        <div className="bd">
          <center>
-    <h1>TEST N°1</h1>
-        Enter Your Full Name:{" "}
-        <input  /><br></br><br></br>
-        Enter Your ID CARD Number:{" "}
-        <input  /><br></br><br></br>
-        <button value="true" onClick={this.changeToTest}>START THE TEST</button>
+    <h1 className="title">TEST N°1</h1>
+        <input type="text" placeholder="Enter Your Full Name:" /><br></br><br></br>
+        <input type="text" placeholder="Enter Your ID CARD Number:"/><br></br><br></br>
+        <button className="btn" value="true" onClick={this.changeToTest}>START THE TEST</button>
         </center>
   </div>
      );
