@@ -1,5 +1,5 @@
-import React from 'react';
-import Test from './Test.jsx';
+import React from "react";
+import Test from "./Test.jsx";
 import $ from "jquery";
 
 class Student extends React.Component {
@@ -9,11 +9,9 @@ class Student extends React.Component {
       username: "",
       idcard: "",
       students: [],
-      stat:'false'
-     }
-
+      stat: "false",
+    };
   }
-
 
   handleChange(e) {
     this.setState({
@@ -22,10 +20,7 @@ class Student extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    if (
-      this.state.username === "" ||
-      this.state.idcard === ""
-    ) {
+    if (this.state.username === "" || this.state.idcard === "") {
       alert("fill all feilds");
     } else {
       axios
@@ -40,37 +35,37 @@ class Student extends React.Component {
           console.log(error);
         });
     }
-    this.setState({stat: 'true'})
+    this.setState({ stat: "true" });
   }
 
   render() {
-    if(this.state.stat === "false"){
-    return (
-       <div className="bd">
-         <center>
-         <h2 className="title">Create Account</h2>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-             <br></br>
-            <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              onChange={this.handleChange.bind(this)}
-            />
-            <br></br>  <br></br>
-            <input
-              type="password"
-              id="idcard"
-              placeholder="Password"
-              onChange={this.handleChange.bind(this)}
-            />
-        <button className="btn" >START THE TEST</button>
-        </form>
-        </center>
-  </div>
-     );
-    }else if(this.state.stat === "true"){
-      return <Test/>
+    if (this.state.stat === "false") {
+      return (
+        <div className="bd">
+          <center>
+            <h2 className="title">Create Account</h2>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <br></br>
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                onChange={this.handleChange.bind(this)}
+              />
+              <br></br> <br></br>
+              <input
+                type="password"
+                id="idcard"
+                placeholder="Password"
+                onChange={this.handleChange.bind(this)}
+              />
+              <button className="btn">START THE TEST</button>
+            </form>
+          </center>
+        </div>
+      );
+    } else if (this.state.stat === "true") {
+      return <Test />;
     }
   }
 }

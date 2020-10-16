@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rbk', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/rbk', {
+  useMongoClient: true,
+
+});
 
 var db = mongoose.connection;
 
@@ -17,15 +20,16 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
-var studentSchema = mongoose.Schema({
-  username : { type: String, unique: true},
-  idcard : Number,
-  result : Number
-});
-
 var user = mongoose.model('user', userSchema);
 
+var studentSchema = mongoose.Schema({
+  username: { type: String, unique: true },
+  idcard: String,
+  result: String
+});
+
 var student = mongoose.model('student', studentSchema);
+
 
 
 var createStudent = function (data, callback) {
@@ -51,6 +55,7 @@ var create = function (data, callback) {
 }
 
 
+
 var updateOne = function (filter, update, callback) {
   user.findOneAndUpdate(filter, update, (err, dat) => {
     if (err) {
@@ -70,6 +75,7 @@ var removeOne = function (filter, remove, callback) {
     }
   })
 }
+
 
 module.exports.create = create;
 module.exports.updateOne = updateOne;
