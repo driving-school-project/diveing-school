@@ -37,7 +37,6 @@ app.post('/student', urlencodedParser, function (req, res) {
   })
 });
 
-
 app.post('/updateOne', urlencodedParser, function (req, res) {
 
   user.updateOne({ username: req.body.username }, { password: req.body.password }, (err, dat) => {

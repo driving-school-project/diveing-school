@@ -1,6 +1,6 @@
-import React from 'react';
-import Student from './Student.jsx';
-import Test from './Test.jsx';
+import React from "react";
+import Student from "./Student.jsx";
+import Test from "./Test.jsx";
 
 class Result  extends React.Component {
     constructor(props) {
@@ -33,7 +33,8 @@ class Result  extends React.Component {
         }else if(this.state.back === 'student'){
             return <Student/>
         }
+
     }
-}
+  }
 
 export default Result;

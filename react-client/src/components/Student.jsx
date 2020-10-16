@@ -1,5 +1,5 @@
-import React from 'react';
-import Test from './Test.jsx';
+import React from "react";
+import Test from "./Test.jsx";
 import $ from "jquery";
 
 
@@ -10,11 +10,9 @@ class Student extends React.Component {
       username: "",
       idcard: "",
       students: [],
-      stat:'false'
-     }
-
+      stat: "false",
+    };
   }
-
 
   handleChange(e) {
     this.setState({
@@ -23,10 +21,7 @@ class Student extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    if (
-      this.state.username === "" ||
-      this.state.idcard === ""
-    ) {
+    if (this.state.username === "" || this.state.idcard === "") {
       alert("fill all feilds");
     } else {
       axios
@@ -41,7 +36,7 @@ class Student extends React.Component {
           console.log(error);
         });
     }
-    this.setState({stat: 'true'})
+    this.setState({ stat: "true" });
   }
 
   render() {

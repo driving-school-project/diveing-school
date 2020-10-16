@@ -30,7 +30,6 @@ class Test extends React.Component {
 
     }
 
-
     render() {
         if(this.state.next <= this.state.data.length -1){
         return (
@@ -50,8 +49,9 @@ class Test extends React.Component {
         }else{
             return <Result result={this.state.result} user={this.props.user} id={this.props.id}/>
         }
+
     }
-}
+  }
+
 
 export default Test;
-

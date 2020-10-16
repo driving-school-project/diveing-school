@@ -10,9 +10,10 @@ class Admin extends React.Component {
       email: "",
       password: "",
       users: [],
-      case: "false",
+      view: "main",
+      Data: [],
     };
-    this.changeCase = this.changeCase.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   handleChange(e) {
@@ -92,13 +93,15 @@ class Admin extends React.Component {
     $("#removepassword").val("");
   }
 
-  changeCase() {
-    this.setState({ case: "true" });
+  changeView(e) {
+    this.setState({ view: e.target.value });
   }
 
   render() {
+    console.log(this.state.Data);
+
     const { username, email, password } = this.state;
-    if (this.state.case === "false") {
+    if (this.state.view === "main") {
       return (
         <div className="bd">
           <center>
@@ -127,12 +130,12 @@ class Admin extends React.Component {
               />
               <br></br> <br></br>
               <input type="submit" value="Create" />
-              <input type="button" value="Login" onClick={this.changeCase} />
+              <input type="button" value="Login" onClick={this.changeView} />
             </form>
           </center>
         </div>
       );
-    } else if (this.state.case === "true") {
+    } else if (this.state.view === "Login") {
       return (
         <div className="bd">
           <center>
@@ -170,6 +173,7 @@ class Admin extends React.Component {
         </div>
       );
     }
+    
   }
 }
 export default Admin;
