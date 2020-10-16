@@ -19,7 +19,7 @@ class Result  extends React.Component {
             <div className="bd">
                 <center>
                 <h1 className="title">Result</h1>
-                <p>Name: </p>
+                <p>Name:</p>
                 <p>Id card number:</p>
                 <p>Result:</p>
                 <button className="btn" value="test" onClick={this.changePage}>Try again</button>
