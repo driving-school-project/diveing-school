@@ -20,9 +20,7 @@ class Test extends React.Component {
         this.setState({next: this.state.next +1})
     }
     getChckeboxValue(e){
-        console.log(e.target.checked)
         if(this.state.data[this.state.next].answerOk === e.target.value){
-            console.log('ok')
             this.setState({
                 result: this.state.result+1});
         }
@@ -39,9 +37,12 @@ class Test extends React.Component {
             <img src={this.state.data[this.state.next].img} alt="image"/>
             <br></br><br></br>
             <span className='text'>Q: {this.state.data[this.state.next].question}</span><br></br><br></br>
-            <input className='text' onClick={this.getChckeboxValue.bind(this)} type="checkbox" value={this.state.data[this.state.next].answer1}/><label className='text'>{this.state.data[this.state.next].answer1}</label><br></br><br></br>
+            <input className='text' onClick={this.getChckeboxValue.bind(this)} type="checkbox"  value={this.state.data[this.state.next].answer1}/><label className='text'>{this.state.data[this.state.next].answer1}</label><br></br><br></br>
+
             <input onClick={this.getChckeboxValue.bind(this)} type="checkbox" value={this.state.data[this.state.next].answer2}/><label className='text'>{this.state.data[this.state.next].answer2}</label><br></br><br></br>
+
             <input onClick={this.getChckeboxValue.bind(this)} type="checkbox" value={this.state.data[this.state.next].answer3}/><label className='text'>{this.state.data[this.state.next].answer3}</label><br></br><br></br>
+
             <button className="btn" value="true" onClick={this.changeToNext} >NEXT</button>
             </center>
             </div>
