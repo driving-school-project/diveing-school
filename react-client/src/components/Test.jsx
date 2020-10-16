@@ -5,7 +5,8 @@ class Test extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            next: "false"
+            next: "false",
+            result : 3,
          }
          this.changeToNext= this.changeToNext.bind(this)
     }
