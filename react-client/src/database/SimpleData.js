@@ -3,31 +3,39 @@
     id: 0,
     img: 'https://www.coderoute.com/tests/1/8.jpg',
     question: `I could take?`,
-    options: [`the first outing`, `the second exit`, `the third exit`],
-    answer: `the second exit`
+    answer1: `the first outing`,
+    answer2: `the second exit`,
+    answer3: `the third exit`,
+    answerOk: `the second exit`
   },
   {
     id: 1,
     img: 'https://www.coderoute.com/tests/1/12.jpg',
     question: `Signage tells me?`,
-    options: [`A ban`, `An indication`, `A bifurcation`],
-    answer: `An indication`
+    answer1: `A ban`,
+    answer2: `An indication`,
+    answer3: `A bifurcation`,
+    answerOk: `An indication`
   },
   {
 
     id: 2,
     img: 'http://static.passetoncode.fr/img-questions/q/542.jpg',
     question: `At this intersection, I will give way ?`,
-    options: [`Right only `, ` Left only `, ` Right and left `],
-    answer: ` Right and left`
+    answer1: `Right only `,
+    answer2: ` Left only `,
+    answer3: `Right and left`,
+    answerOk: `Right and left`
   },
 
   {
     id: 3,
     img: 'http://static.passetoncode.fr/img-questions/q/542.jpg',
     question: `My fuel consumption depends on?`,
-    options: [`My driving style `, ` The weather `, `Traffic conditions `],
-    answer: `  The weather`
+    answer1: `My driving style `,
+    answer2: `The weather`,
+    answer3: `Traffic conditions `,
+    answerOk: `The weather`
 
   },
 
@@ -35,8 +43,10 @@
     id: 4,
     img: 'http://static.passetoncode.fr/img-questions/q/255.jpg',
     question: ` I can circulate in traffic lights of?`,
-    options: [`Position only `, ` Crossing `, `Rear fog `],
-    answer: ` Crossing `
-
+    answer1: `Position only `,
+    answer2: `Crossing`,
+    answer3: `Rear fog `,
+    answerOk: `Crossing`
   }
 ]
+export default Data;

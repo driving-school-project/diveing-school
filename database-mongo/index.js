@@ -17,7 +17,27 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
+var studentSchema = mongoose.Schema({
+  username : { type: String, unique: true},
+  idcard : Number,
+  result : Number
+});
+
 var user = mongoose.model('user', userSchema);
+
+var student = mongoose.model('student', studentSchema);
+
+
+var createStudent = function (data, callback) {
+  student.create(data, (err, dat) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, dat)
+    }
+
+  })
+}
 
 var create = function (data, callback) {
   user.create(data, (err, dat) => {
@@ -54,3 +74,4 @@ var removeOne = function (filter, remove, callback) {
 module.exports.create = create;
 module.exports.updateOne = updateOne;
 module.exports.removeOne = removeOne;
+module.exports.createStudent = createStudent;
