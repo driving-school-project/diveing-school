@@ -25,8 +25,8 @@ class App extends React.Component {
           <div className="bd">
             <center>
               <h1 className="title">Driving School</h1>
-              <button className="btn" value='admin' onClick={this.changeView}>ADMIN</button>
-              <button className="btn" value='student' onClick={this.changeView}>STUDENT</button>
+              <button  className="btn" value='admin' onClick={this.changeView}>ADMIN</button>
+              <button  className="btn" value='student' onClick={this.changeView}>STUDENT</button>
             </center>
           </div>
         </div>)
