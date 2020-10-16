@@ -6,7 +6,7 @@ class Result  extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            back: ''
+            back: '',
          }
          this.changePage= this.changePage.bind(this)
     }
