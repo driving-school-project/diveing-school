@@ -163,17 +163,19 @@ class Admin extends React.Component {
             <br></br>
           </center>
           <div>
+            <center>
             <button
               className="btn"
               onClick={() => window.location.reload(false)}
             >
               Click to reload!
             </button>
+            </center>
           </div>
         </div>
       );
     }
-    
+
   }
 }
 export default Admin;
