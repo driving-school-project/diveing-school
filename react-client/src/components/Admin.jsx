@@ -10,7 +10,9 @@ class Admin extends React.Component {
       email: "",
       password: "",
       users: [],
+      case: "false",
     };
+    this.changeCase = this.changeCase.bind(this);
   }
 
   handleChange(e) {
@@ -90,60 +92,84 @@ class Admin extends React.Component {
     $("#removepassword").val("");
   }
 
-  render() {
-    const { username, email, password } = this.state;
-    return (
-      <div>
-        <center>
-          <h2>Create Account</h2>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            Username: <br></br>
-            <input
-              type="text"
-              id="username"
-              onChange={this.handleChange.bind(this)}
-            />
-            <br></br> Email: <br></br>
-            <input
-              type="text"
-              id="email"
-              onChange={this.handleChange.bind(this)}
-            />
-            <br></br> Password: <br></br>
-            <input
-              type="password"
-              id="password"
-              onChange={this.handleChange.bind(this)}
-            />
-            <br></br> <br></br>
-            <input type="submit" value="Create" />
-          </form>
-          <h2>Update Account</h2>
-          <br></br> Username : <br></br>
-          <input type="text" id="updateUser" />
-          <br></br> New Password : <br></br>{" "}
-          <input type="password" id="updateUserPassword" />
-          <br></br>
-          <br></br>
-          <input type="submit" onClick={this.UpdateUser.bind(this)} /> <br></br>
-          <h2>Remove Account</h2>
-          <br></br> Username: <br></br>
-          <input type="text" id="removeUser" />
-          <br></br> Password : <br></br>{" "}
-          <input type="password" id="removepassword" />
-          <br></br>
-          <br></br>
-          <input type="submit" onClick={this.RemoveUser.bind(this)} /> <br></br>
-        </center>
-        <div>
-          <button onClick={() => window.location.reload(false)}>
-            Click to reload!
-          </button>
-        </div>
-      </div>
-    );
+  changeCase() {
+    this.setState({ case: "true" });
   }
 
-
+  render() {
+    const { username, email, password } = this.state;
+    if (this.state.case === "false") {
+      return (
+        <div className="bd">
+          <center>
+            <h2 className="title">Create Account</h2>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <br></br>
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                onChange={this.handleChange.bind(this)}
+              />
+              <br></br> <br></br>
+              <input
+                type="text"
+                id="email"
+                placeholder="Email"
+                onChange={this.handleChange.bind(this)}
+              />
+              <br></br> <br></br>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                onChange={this.handleChange.bind(this)}
+              />
+              <br></br> <br></br>
+              <input type="submit" value="Create" />
+              <input type="button" value="Login" onClick={this.changeCase} />
+            </form>
+          </center>
+        </div>
+      );
+    } else if (this.state.case === "true") {
+      return (
+        <div className="bd">
+          <center>
+            <h2 className="title">Update Account</h2>
+            <br></br> <br></br>
+            <input type="text" id="updateUser" placeholder="Username" />
+            <br></br> <br></br>{" "}
+            <input
+              type="password"
+              id="updateUserPassword"
+              placeholder="New Password"
+            />
+            <br></br>
+            <br></br>
+            <input type="submit" onClick={this.UpdateUser.bind(this)} />{" "}
+            <br></br>
+            <h2 className="title">Remove Account</h2>
+            <br></br> <br></br>
+            <input type="text" id="removeUser" placeholder="Username" />
+            <br></br> <br></br>{" "}
+            <input type="password" id="removepassword" placeholder="Password" />
+            <br></br>
+            <br></br>
+            <input type="submit" onClick={this.RemoveUser.bind(this)} />{" "}
+            <br></br>
+          </center>
+          <div>
+            <button
+              className="btn"
+              onClick={() => window.location.reload(false)}
+            >
+              Click to reload!
+            </button>
+          </div>
+        </div>
+      );
+    }
+  }
 }
 export default Admin;

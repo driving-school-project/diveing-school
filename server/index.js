@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var user = require('../database-mongo');
+var student = require('../database-mongo');
 
 var app = express();
 
@@ -10,6 +11,20 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.post('/user', urlencodedParser, function (req, res) {
   user.create(req.body, (err, data) => {
+    if (data) {
+      console.log("Created New User")
+      res.send("Created New User")
+      res.end()
+    }
+    if (err) {
+      res.send("Write another Username")
+      res.end()
+    }
+  })
+});
+
+app.post('/student', urlencodedParser, function (req, res) {
+  student.createStudent(req.body, (err, data) => {
     if (data) {
       console.log("Created New User")
       res.send("Created New User")
