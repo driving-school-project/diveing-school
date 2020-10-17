@@ -1,5 +1,5 @@
-# diving-school
-app for diving school
+# driving-school
+app for driving school
 
 ## Prompt
 
